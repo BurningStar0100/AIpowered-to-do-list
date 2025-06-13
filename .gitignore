@@ -1,0 +1,25 @@
+# Environment variables (real secrets)
+**/.env
+
+# But allow .env.example files
+!**/.env.example
+
+# Dependencies
+**/node_modules/
+**/venv/
+**/__pycache__/
+
+# Build outputs
+**/dist/
+**/build/
+
+# Logs
+**/*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
