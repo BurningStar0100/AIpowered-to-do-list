@@ -63,51 +63,9 @@ cd frontend && npm run dev
 - API Docs: http://localhost:8000/docs
 
 ## Project Structure
-[Include the directory structure here]
-```
 
-**/docker-compose.yml** (Optional but helpful)
-```yaml
-version: '3.8'
-
-services:
-  postgres:
-    image: postgres:15
-    environment:
-      POSTGRES_DB: taskmanager
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  backend:
-    build: ./backend
-    ports:
-      - "5000:5000"
-    environment:
-      - DATABASE_URL=postgresql://postgres:password@postgres:5432/taskmanager
-      - NLP_SERVICE_URL=http://nlp-service:8000
-    depends_on:
-      - postgres
-      - nlp-service
-
-  nlp-service:
-    build: ./nlp-service
-    ports:
-      - "8000:8000"
-    environment:
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-
-volumes:
-  postgres_data:
-```
+## Screenshots from terminal
+![Terminal Screenshot1](./screenshots/demo1.png)
+![Terminal Screenshot2](./screenshots/demo2.png)
+![Terminal Screenshot3](./screenshots/demo3.png)
 
